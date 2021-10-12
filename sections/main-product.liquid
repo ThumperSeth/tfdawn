@@ -86,6 +86,25 @@
             </div>
             <div {{ block.shopify_attributes }}>
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
+               <div class="field">
+  					<input 
+                      type="checkbox"
+                       id="isMatte" 
+                      name="properties[isMatte]"
+                      form="product-form-{{ section.id }}"
+                    >
+  					<label class="field__label" for="isMatte">Matte option</label>
+				</div>
+
+				<div class="field">
+                  <input class="field__input"
+                    type="text"
+                    id="engraving" 
+                    name="properties[engraving]"
+                    form="product-form-{{ section.id }}"
+                  >
+                  <label class="field__label" for="engraving">Engraving</label>
+                </div>
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 {{ form | payment_terms }}
               {%- endform -%}
@@ -257,25 +276,6 @@
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">
                 {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                <div class="field">
-  					<input 
-                      type="checkbox"
-                       id="isMatte" 
-                      name="properties[isMatte]"
-                      form="product-form-{{ section.id }}"
-                    >
-  					<label class="field__label" for="isMatte">Matte option</label>
-				</div>
-
-				<div class="field">
-                  <input class="field__input"
-                    type="text"
-                    id="engraving" 
-                    name="properties[engraving]"
-                    form="product-form-{{ section.id }}"
-                  >
-                  <label class="field__label" for="engraving">Engraving</label>
-                </div>
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   <div class="product-form__buttons">
                     <button
