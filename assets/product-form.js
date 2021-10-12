@@ -17,6 +17,10 @@ class ProductForm extends HTMLElement {
     submitButton.classList.add('loading');
 
     const body = JSON.stringify({
+      properties: {
+        'Engraving': document.getElementById('engraving').value,
+        'Is Matte': document.getElementById('isMatte').value,
+      },
       ...JSON.parse(serializeForm(this.form)),
       sections: this.cartNotification.getSectionsToRender().map((section) => section.id),
       sections_url: window.location.pathname
