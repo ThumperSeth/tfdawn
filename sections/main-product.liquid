@@ -231,6 +231,11 @@
                 </variant-selects>
               {%- endif -%}
             {%- endunless -%}
+        
+        
+        
+        {%- comment -%} ADD PERISTANT FIELDS HERE {%- endcomment -%}
+        
                        <div class="field">
   					<input 
                       type="checkbox"
@@ -249,7 +254,10 @@
                     form="product-form-{{ section.id }}"
                   >
                   <label class="field__label" for="engraving">Engraving</label>
-                </div>
+        		</div>
+        
+        {%- comment -%} ADD PERISTANT FIELDS HERE {%- endcomment -%}        
+        
             <noscript>
               <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
                 <label class="form__label" for="Variants-{{ section.id }}">{{ 'products.product.product_variants' | t }}</label>
