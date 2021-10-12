@@ -86,25 +86,6 @@
             </div>
             <div {{ block.shopify_attributes }}>
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
-               <div class="field">
-  					<input 
-                      type="checkbox"
-                       id="isMatte" 
-                      name="properties[isMatte]"
-                      form="product-form-{{ section.id }}"
-                    >
-  					<label class="field__label" for="isMatte">Matte option</label>
-				</div>
-
-				<div class="field">
-                  <input class="field__input"
-                    type="text"
-                    id="engraving" 
-                    name="properties[engraving]"
-                    form="product-form-{{ section.id }}"
-                  >
-                  <label class="field__label" for="engraving">Engraving</label>
-                </div>
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 {{ form | payment_terms }}
               {%- endform -%}
@@ -197,6 +178,25 @@
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
+                       <div class="field">
+  					<input 
+                      type="checkbox"
+                       id="isMatte" 
+                      name="properties[isMatte]"
+                      form="product-form-{{ section.id }}"
+                    >
+  					<label class="field__label" for="isMatte">Matte option</label>
+				</div>
+
+				<div class="field">
+                  <input class="field__input"
+                    type="text"
+                    id="engraving" 
+                    name="properties[engraving]"
+                    form="product-form-{{ section.id }}"
+                  >
+                  <label class="field__label" for="engraving">Engraving</label>
+                </div>
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
