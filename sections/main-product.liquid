@@ -256,6 +256,22 @@
                   <label class="field__label" for="engraving">Engraving</label>
         		</div>
         
+        
+        		<variant-radios class="no-js-hidden" data-section="{{ section.id }}">
+					<fieldset class="js product-form__input">
+						<legend class="form__label">Colour</legend>
+
+						<input type="radio" id="tfColour-0" name="properties[Colour]" value="RAWDOG" form="product-form-{{ section.id }}" checked="">
+						<label for="tfCOLOUR-0">RAWDOG</label>
+
+						<input type="radio" id="tfCOLOUR-1" name="properties[Colour]" value="BLACKDOG" form="product-form-{{ section.id }}">
+						<label for="tfCOLOUR-1">BLACKDOG</label>
+
+						<input type="radio" id="tfCOLOUR-2" name="properties[Colour]" value="CUSTOMDOG" form="product-form-{{ section.id }}">
+						<label for="tfCOLOUR-2">CUSTOMDOG</label>
+					</fieldset>
+				</variant-radios>
+        
         {%- comment -%} ADD PERISTANT FIELDS HERE {%- endcomment -%}        
         
             <noscript>
